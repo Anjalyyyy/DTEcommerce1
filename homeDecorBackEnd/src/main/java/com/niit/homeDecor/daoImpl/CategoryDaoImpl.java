@@ -13,11 +13,18 @@ public class CategoryDaoImpl implements CategoryDao
 
 	@Autowired
 	SessionFactory sessionFactory;
-	public CategoryDaoImpl(SessionFactory sessionFactory)
-	{
-		
-		this.sessionFactory=sessionFactory;
+	
+	
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
 	}
+
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+
 	public void insertCategory(Category category)
 	{
 		

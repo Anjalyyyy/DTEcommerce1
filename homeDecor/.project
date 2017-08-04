@@ -3,8 +3,8 @@
 	<name>homeDecor</name>
 	<comment></comment>
 	<projects>
-		<project>homeDecorBackEnd</project>
 		<project>Servers</project>
+		<project>homeDecorBackEnd</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

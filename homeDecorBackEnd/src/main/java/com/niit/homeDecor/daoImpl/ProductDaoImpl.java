@@ -12,11 +12,15 @@ public class ProductDaoImpl implements ProductDao
 {
 	@Autowired
 	SessionFactory sessionFactory;
-	public ProductDaoImpl(SessionFactory sessionFactory)
-	{
-		
-		this.sessionFactory=sessionFactory;
+	
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
 	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	/*@Transactional*/
 	public void insertProduct(Product product)
 	{

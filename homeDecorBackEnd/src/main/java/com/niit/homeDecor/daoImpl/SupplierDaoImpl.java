@@ -12,11 +12,15 @@ public class SupplierDaoImpl implements SupplierDao
 {
 	@Autowired
 	SessionFactory sessionFactory;
-	public SupplierDaoImpl(SessionFactory sessionFactory)
-	{
-		
-		this.sessionFactory=sessionFactory;
+	
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
 	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	/*@Transactional*/
 	public void insertSupplier(Supplier supplier)
 	{
