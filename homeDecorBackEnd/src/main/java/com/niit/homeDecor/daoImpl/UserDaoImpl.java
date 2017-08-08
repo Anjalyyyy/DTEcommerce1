@@ -35,6 +35,24 @@ public class UserDaoImpl implements UserDao{
 	    session.saveOrUpdate(user);
 	    session.getTransaction().commit();
 	}
+
+
+	public User getUser(String email, String pwd) {
+	 
+		System.out.print("hai in user impl");
+		Session session=sessionFactory.openSession();
+	    session.beginTransaction();
+	    User user = (User)
+	    	    session.createQuery("from User where email = :email and password=:password")
+	    	           .setString("email", email)
+	    	           .setString("password", pwd)
+	    	           .uniqueResult();
+	    session.getTransaction().commit();
+		return user;
+	}
+
+
+	
 	
 
 }

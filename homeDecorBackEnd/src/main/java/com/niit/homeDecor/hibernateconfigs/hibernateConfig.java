@@ -14,6 +14,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.homeDecor.models.Category;
+import com.niit.homeDecor.models.Product;
+import com.niit.homeDecor.models.Supplier;
 import com.niit.homeDecor.models.User;
 
 @Configuration
@@ -31,6 +34,9 @@ public class hibernateConfig
 	        sessionBuilder.addProperties(getHibernateProperties());
 	       
 	        sessionBuilder.addAnnotatedClass(User.class);
+	        sessionBuilder.addAnnotatedClass(Category.class);
+	        sessionBuilder.addAnnotatedClass(Product.class);
+	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	       
 	        
 	        return sessionBuilder.buildSessionFactory();

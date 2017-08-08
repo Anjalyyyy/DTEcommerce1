@@ -18,7 +18,7 @@
 
         <div class="container">
         <div class="col-md-2 col-sm-4 col-xs-12 postaviborder">
-         <form>
+       <form action="dLogin" method="post">
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" id="email">

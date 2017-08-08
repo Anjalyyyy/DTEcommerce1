@@ -25,11 +25,22 @@
     <div class="navbar-collapse collapse" id="myidname">  
         <ul class="nav navbar-nav">  
             <li>  
-                <a href="/">Home</a>  
+                <a href="./">Home</a>  
             </li>  
             <li>  
-                <a href="#">Contact Us</a>  
+                <a href="#">
+          <span class=span class="glyphicon glyphicon-earphone"></span>
+       </a>  
             </li>  
+             <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category List
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Wall Clocks</a></li>
+          <li><a href="#">Paintings</a></li>
+          <li><a href="#">Frames</a></li>
+          </ul>
+          </li>
             <li>  
                 <a href="register">Register</a>  
             </li>  
@@ -39,14 +50,5 @@
         </ul>  
     </div> 
     </div>
-
-  
-
-
-  
-
-
-
-
 </body>
 </html>

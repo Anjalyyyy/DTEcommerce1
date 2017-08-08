@@ -1,41 +1,48 @@
 package com.niit.homeDecor.models;
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
 
-@Entity//for creating table
-@Table(name="Supplier")
-
-public class Supplier implements Serializable {
+@Entity
+@Table
+@Component
+public class Supplier 
+{
 	@Id
-	private int sid;
-	private String supplierName;
-	@OneToMany(targetEntity=Product.class,fetch=FetchType.EAGER,mappedBy="category")
-	private Set<Product> product=new HashSet<Product>(0);
-	public int getsid() {
+	private String sid;
+	private String name;
+	private String address;
+	
+	public String getsid() 
+	{
 		return sid;
 	}
-	public void setSid(int sid) {
+	
+	public void setsidd(String sid) 
+	{
 		this.sid = sid;
 	}
-	public String getSupplierName() {
-		return supplierName;
-	}
-	public void setsupplierName(String supplierName) {
-		this.supplierName =supplierName;
-	}
-
-	public Set<Product> getProduct()
+	
+	public String getName() 
 	{
-		return product;
+		return name;
 	}
 	
-
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	
+	public String getAddress() 
+	{
+		return address;
+	}
+	
+	public void setAddress(String address) 
+	{
+		this.address = address;
+	}
+	
 }
