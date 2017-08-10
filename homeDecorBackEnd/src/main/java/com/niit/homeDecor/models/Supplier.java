@@ -1,5 +1,7 @@
 package com.niit.homeDecor.models;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,15 +17,14 @@ public class Supplier
 	private String name;
 	private String address;
 	
-	public String getsid() 
-	{
+	public String getSid() {
 		return sid;
 	}
-	
-	public void setsidd(String sid) 
-	{
+
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
+
 	
 	public String getName() 
 	{

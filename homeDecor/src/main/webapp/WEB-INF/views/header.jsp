@@ -28,6 +28,9 @@
                 <a href="./">Home</a>  
             </li>  
             <li>  
+                <a href="adding">Admin</a>  
+            </li>  
+            <li>  
                 <a href="#">
           <span class=span class="glyphicon glyphicon-earphone"></span>
        </a>  

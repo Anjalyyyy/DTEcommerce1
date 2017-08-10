@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.homeDecor.daos.SupplierDao;
 import com.niit.homeDecor.daos.UserDao;
+import com.niit.homeDecor.models.Supplier;
 import com.niit.homeDecor.models.User;
 
 
@@ -20,7 +22,8 @@ public class homeController {
 	
 	@Autowired
 	UserDao userDao;
-	
+	@Autowired
+	SupplierDao supplierDao;
 	@RequestMapping("/")
 	public ModelAndView index() { 
 		ModelAndView mv = new ModelAndView("index");
@@ -32,6 +35,14 @@ public class homeController {
 	public ModelAndView goToRegister()
 	{
 		ModelAndView mav=new ModelAndView("register");
+		
+		
+		return mav;
+	}
+    @RequestMapping("/adding")
+	public ModelAndView goToAdding()
+	{
+		ModelAndView mav=new ModelAndView("adding");
 		
 		
 		return mav;
@@ -92,6 +103,27 @@ public class homeController {
 
 	System.out.print(user);
 	   userDao.insertUser(user);
+	  
+	   return mav;
+	   
+	   
+	}
+	@RequestMapping(value = "/savesupplier", method = RequestMethod.POST)
+	public ModelAndView saveSupplier(HttpServletRequest request)
+	{
+
+	ModelAndView mav=new ModelAndView("redirect:/adding");
+	String id=request.getParameter("id");
+	String name=request.getParameter("name");
+	String address=request.getParameter("address");
+	System.out.print(name);
+	Supplier supplier=new Supplier();
+	supplier.setSid(id);
+	supplier.setAddress(address);
+	supplier.setName(name);
+
+	System.out.print(supplier);
+	   supplierDao.insertSupplier(supplier);
 	  
 	   return mav;
 	   

@@ -1,4 +1,6 @@
 package com.niit.homeDecor.daoImpl;
+import java.util.List;
+
 import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,6 +35,20 @@ public class CategoryDaoImpl implements CategoryDao
 	    session.saveOrUpdate(category);
 	    session.getTransaction().commit();
 	}
+	public List<Category> getCategorys() {
+		 
+		System.out.print("hai in category impl");
+		Session session=sessionFactory.openSession();
+	    session.beginTransaction();
+	   List<Category> category=session.createCriteria(Category.class).list();
+	    	    
+	    session.getTransaction().commit();
+		return category;
+	}
+
+
+	
+
 	
 
 }
