@@ -66,15 +66,27 @@ div.tab button.active {
   <button class="tablinks" onclick="openCity(event, 'Category')">Category</button>
   <button class="tablinks" onclick="openCity(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openCity(event, 'Supplier')">Supplier</button>
+  
+  
 </div>
 </center>
 <div id="Category" class="tabcontent">
-     <form action="saveCategory" method="post">
+     <form action="savecategory" method="post">
+       <div class="form-group">
+    <label for="categoryId">Category Id:</label>
+    <input type="categoryId" class="form-control" id="id" name="id">
+  </div>
   <div class="form-group">
     <label for="categoryName">Category Name:</label>
-    <input type="categoryName" class="form-control" id="name">
+    <input type="categoryName" class="form-control" id="name" name="name">
+  </div>
+    <div class="form-group">
+    <label for="categoryDecription">Category Description:</label>
+    <input type="categoryDecription" class="form-control" id="id"name="description" >
   </div>
   <button type="submit" class="btn btn-default">ADD</button>
+    <a href="categoryList"> <button type="button" class="btn btn-default">View All</button></a>
+  
 </form>
 </div>
 <form action="saveProduct" method="post">
@@ -124,8 +136,9 @@ div.tab button.active {
     <input type="supplierAddress" class="form-control" id="address" name="address">
   </div>
    <button type="submit" class="btn btn-default">ADD</button>
+   <a href="supplierList"> <button type="button" class="btn btn-default">View All</button></a>
+
   </form>
-</div>
 </div>
 
 <script type="text/javascript">

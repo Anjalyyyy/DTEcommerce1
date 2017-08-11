@@ -24,11 +24,9 @@ public class Product
 	@ManyToOne
 	@JoinColumn(name="cid" , insertable=false, updatable=false, nullable=false)
 	private Category category;
-	private String cid;
 	@ManyToOne
 	@JoinColumn(name="sid",insertable=false, updatable=false, nullable=false)
 	private Supplier supplier;
-	private String sid;
 	
 	private int stock;
 	
@@ -72,15 +70,7 @@ public class Product
 		this.description = description;
 	}
 	
-	public String getsid() 
-	{
-		return sid;
-	}
 	
-	public void setsid(String sid) 
-	{
-		this.sid = sid;
-	}
 	
 	public int getStock() 
 	{
@@ -115,13 +105,6 @@ public class Product
 	@Transient
 	private MultipartFile image;
 
-	public String getcid() {
-		return cid;
-	}
-
-	public void setCategory_id(String cid) {
-		this.cid = cid;
-	}
 
 	public MultipartFile getImage() {
 		return image;
