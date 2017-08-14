@@ -47,6 +47,16 @@ public class CategoryDaoImpl implements CategoryDao
 	}
 
 
+	public Category getCategory(String cid) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+	    session.beginTransaction();
+	   Category category=(Category)session.get(Category.class,cid);
+	   session.getTransaction().commit();
+		return category;
+	}
+
+
 	
 
 	

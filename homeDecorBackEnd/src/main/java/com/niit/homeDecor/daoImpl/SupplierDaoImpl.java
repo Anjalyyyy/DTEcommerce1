@@ -44,6 +44,16 @@ public class SupplierDaoImpl implements SupplierDao
 		return supplier;
 	}
 
+	public Supplier getSupplier(String sid) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+	    session.beginTransaction();
+	   Supplier supplier=(Supplier) session.get(Supplier.class,sid);
+	    	    
+	    session.getTransaction().commit();
+		return supplier;
+	}
+
 
 	
 	

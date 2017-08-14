@@ -22,10 +22,10 @@ public class Product
 	private String description;
 	
 	@ManyToOne
-	@JoinColumn(name="cid" , insertable=false, updatable=false, nullable=false)
+	@JoinColumn(name="cid" , insertable=true, updatable=false, nullable=false)
 	private Category category;
 	@ManyToOne
-	@JoinColumn(name="sid",insertable=false, updatable=false, nullable=false)
+	@JoinColumn(name="sid",insertable=true, updatable=false, nullable=false)
 	private Supplier supplier;
 	
 	private int stock;
@@ -113,6 +113,13 @@ public class Product
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description
+				+ ", category=" + category + ", supplier=" + supplier + ", stock=" + stock + ", image=" + image + "]";
+	}
+	
 	
 	
 }

@@ -7,6 +7,8 @@ import com.niit.homeDecor.models.Category;
 public interface CategoryDao {
 	public void insertCategory(Category category);
 	public List<Category> getCategorys();
+	public Category getCategory(String cid);
+	
 
 
 }

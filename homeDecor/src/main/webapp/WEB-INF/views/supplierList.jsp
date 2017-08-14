@@ -33,7 +33,7 @@ cursor: pointer;
 border-radius: 50px;
 }
 </style>
-<title>Admin - Categories</title>
+<title>Admin - Suppliers</title>
 </head>
 <body style="background-color: #e6ffff">
 <jsp:include page="header.jsp" />
@@ -49,7 +49,7 @@ class=" glyphicon glyphicon-triangle-left"></span></span>Back</a>
 <tr>
 <td>Category ID</td>
 <c:choose>
-<c:when test="${!empty category.id}">
+<c:when test="${!empty supplier.id}">
 <td><form:input type="text" path="id" name="id"
 disabled="true" readonly="true" /></td>
 </c:when>
@@ -75,26 +75,26 @@ name="description" maxlength="500" required="true"/></td>
 
 <tr>
 <c:if test="${!empty category.name}">
-<td><input class="btn btn-success" type="submit" value="Edit Category" /></td>
+<td><input class="btn btn-success" type="submit" value="Edit Supplier" /></td>
 </c:if> --%>
 
 <table class="table">
     <thead>
       <tr>
-        <th>Category ID</th>
-        <th>Category Name</th>
-        <th>Category Description</th>
+        <th>Supplier ID</th>
+        <th>Supplier Name</th>
+        <th>Supplier Address</th>
       </tr>
     </thead>
     <tbody>
-    <c:forEach var="c" items="${clist}" >
+    <c:forEach var="c" items="${slist}" >
       <tr>
-        <td><c:out value="${c.cid}"/></td>
+        <td><c:out value="${c.sid}"/></td>
         <td><c:out value="${c.name}"/></td>
-        <td><c:out value="${c.description}"/></td>
+        <td><c:out value="${c.address}"/></td>
       </tr>      
       </c:forEach>
     </tbody>
   </table>
 
-${clist}
+${slist}

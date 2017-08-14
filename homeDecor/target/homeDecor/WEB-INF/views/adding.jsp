@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -89,9 +90,9 @@ div.tab button.active {
   
 </form>
 </div>
-<form action="saveProduct" method="post">
+
 <div id="Products" class="tabcontent">
-<form>
+<form action="saveProduct" method="post">
   <div class="form-group">
     <label for="productName">Prodcut Name:</label>
     <input type="productName" class="form-control" id="productName">
@@ -104,20 +105,43 @@ div.tab button.active {
     <label for="productPrice">Product Price:</label>
     <input type="productPrice" class="form-control" id="productPrice">
   </div>
-  <div class="form-group">
-    <label for="productImage">Product Image:</label>
-    <input type="Image" class="form-control" id="productImage">
-  </div>
-  <div>
-   <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
-      </span>
+  
+ <div class="form-group">
+        <label>Upload Image</label>
+        <div class="input-group">
+            
+                <span class="btn btn-default btn-file">
+                    Browse <input type="file" id="imgInp">
+                </span>
+          
+            
+        </div>
+        <img id='img-upload'/>
     </div>
    <div class="form-group">
     <label for="productStock">Product Stock:</label>
     <input type="productStock" class="form-control" id="productStock">
   </div>
+   <div class="form-group">
+    <label for="categoryName">Categoty Name:</label>
+    <select name="cid">
+        <c:forEach var="c" items="${clist}" >
+          <option value="${c.cid}"><c:out value="${c.name}"/></option>
+       </c:forEach>
+    </select>
+  </div>
+  <div class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+  </a>
+   <label for="supplierName">Supplier Name:</label>
+    <select name="sid">
+        <c:forEach var="c" items="${slist}" >
+          <option  value="${c.sid}"><c:out value="${c.name}"/></option>
+       </c:forEach>
+    </select>
+  </div>
    <button type="submit" class="btn btn-default">ADD</button>
-  
+  <a href="productList"> <button type="button" class="btn btn-default">View All</button></a> 
 </form>
 </div>
 
